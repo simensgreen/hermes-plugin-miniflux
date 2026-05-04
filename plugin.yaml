@@ -1,0 +1,24 @@
+name: hermes-plugin-miniflux
+version: 0.3.0
+description: Read and consume unread Miniflux RSS entries for Hermes workflows.
+author: simens_green
+kind: standalone
+
+provides_tools:
+  - miniflux_check
+  - miniflux_list_unread_entries
+  - miniflux_consume_unread_entries
+  - miniflux_mark_entries_read
+  - miniflux_list_categories
+  - miniflux_list_feeds
+
+provides_skills:
+  - miniflux-rss-workflow
+
+requires_env:
+  - name: MINIFLUX_URL
+    description: Base URL of your Miniflux instance (scheme and host, no trailing slash).
+    secret: false
+  - name: MINIFLUX_API_TOKEN
+    description: Miniflux API token from Settings > API Keys
+    secret: true
